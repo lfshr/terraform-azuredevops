@@ -1,0 +1,30 @@
+{
+    "id": "23addc39-bbd9-4061-b6e2-1dc415d16f8e",
+    "name": "lf-terraform",
+    "friendlyName": "Terraform",
+    "description": "Task for running terraform on Azure DevOps",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Liam Fisher",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "Echo $(samplestring)",
+    "inputs": [
+        {
+            "name": "samplestring",
+            "type": "string",
+            "label": "Sample String",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "A sample string"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}
