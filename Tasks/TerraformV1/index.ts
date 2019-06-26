@@ -1,15 +1,17 @@
 import * as tl from 'azure-pipelines-task-lib/task'
 import * as path from 'path';
 import * as os from 'os';
+import * as fs from 'fs';
+import { TerraformInstaller } from './utils'
 
-const tempDir = os.tmpdir()
-const terraformVersion: string = tl.getInput('terraformVersion', true);
-console.log(tempDir)
-const terraformDir: string = path.join(tempDir, 'terraform-azuredevops', 'terraform', terraformVersion);
-console.log(`Terraform directory: ${terraformDir}`);
+const version = tl.getInput('terraformversion', true);
+const install = new TerraformInstaller()
 
-// Does terraform exist already?
-
+try {
+    install.checkAndInstallTerraform(version)
+} catch (err) {
+    tl.setResult(tl.TaskResult.Failed, err.Message);
+}
 
 // async function run() {
 //     try {

@@ -8,13 +8,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var tl = __importStar(require("azure-pipelines-task-lib/task"));
-var path = __importStar(require("path"));
-var os = __importStar(require("os"));
-var tempDir = os.tmpdir();
-var terraformVersion = tl.getInput('terraformVersion', true);
-console.log(tempDir);
-var terraformPath = path.join(tempDir, 'terraform-azuredevops', 'terraform', terraformVersion);
-console.log(terraformPath);
+var install_1 = require("./utils/install");
+var version = tl.getInput('terraformversion', true);
+var install = new install_1.Installer();
+install.checkAndInstallTerraform(version);
 // async function run() {
 //     try {
 //         const inputString: string = tl.getInput("samplestring", true);
