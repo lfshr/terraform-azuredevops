@@ -4,13 +4,14 @@
   "description": "Azure DevOps custom task for running terraform",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node ./out/index.js"
   },
   "author": "Liam Fisher",
   "license": "ISC",
   "dependencies": {
     "azure-pipelines-task-lib": "^2.8.0",
-    "hasbin": "^1.2.3"
+    "temp-dir": "^2.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",

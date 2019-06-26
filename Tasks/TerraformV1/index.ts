@@ -1,24 +1,29 @@
-import tl = require('azure-pipelines-task-lib/task')
+import * as tl from 'azure-pipelines-task-lib/task'
+import * as path from 'path';
+import * as os from 'os';
 
-var hasbin = require('hasbin')
+const tempDir = os.tmpdir()
+const terraformVersion: string = tl.getInput('terraformVersion', true);
+console.log(tempDir)
+const terraformDir: string = path.join(tempDir, 'terraform-azuredevops', 'terraform', terraformVersion);
+console.log(`Terraform directory: ${terraformDir}`);
 
-if (false == hasbin.sync('terraform'))
+// Does terraform exist already?
 
 
+// async function run() {
+//     try {
+//         const inputString: string = tl.getInput("samplestring", true);
+//         if (inputString == 'bad') {
+//             tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+//             return;
+//         }
 
-async function run() {
-    try {
-        const inputString: string = tl.getInput("samplestring", true);
-        if (inputString == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
-            return;
-        }
+//         console.log('Hello', inputString);
+//     }
+//     catch (err) {
+//         tl.setResult(tl.TaskResult.Failed, err.Message)
+//     }
+// }
 
-        console.log('Hello', inputString);
-    }
-    catch (err) {
-        tl.setResult(tl.TaskResult.Failed, err.Message)
-    }
-}
-
-run();
+// run();
