@@ -22,5 +22,6 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: sleep 60
-  displayName: sleep
+- task: ManualIntervention@8
+  inputs:
+    instructions: 'Review the plan'
