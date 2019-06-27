@@ -18,10 +18,5 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+    echo Running terraform plan...
   displayName: 'Run a multi-line script'
-
-- task: ManualIntervention@8
-  inputs:
-    instructions: 'Review the plan'
