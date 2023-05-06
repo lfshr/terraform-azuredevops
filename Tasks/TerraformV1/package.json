@@ -10,7 +10,7 @@
   "author": "Liam Fisher",
   "license": "ISC",
   "dependencies": {
-    "azure-pipelines-task-lib": "^2.8.0",
+    "azure-pipelines-task-lib": "^4.3.1",
     "temp-dir": "^2.0.0"
   },
   "devDependencies": {
